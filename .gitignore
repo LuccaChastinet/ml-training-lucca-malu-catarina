@@ -6,3 +6,7 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# Resultados dos treinos (gerados localmente)
+results/
+results_docker/
