@@ -10,3 +10,6 @@ venv/
 # Resultados dos treinos (gerados localmente)
 results/
 results_docker/
+
+mnist_test.csv
+mnist_train_small.csv
