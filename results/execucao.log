@@ -1,0 +1,299 @@
+Informações do sistema:
+  sistema_operacional: Microsoft Windows 11 Pro 10.0.26200
+  em_docker: False
+  python_versao: 3.12.4
+  pytorch_versao: 2.14.1+cpu
+  cpu_modelo: 12th Gen Intel(R) Core(TM) i9-12900KF
+  cpu_nucleos_logicos: 24
+  gpu_modelo_nvidia: não disponível
+  ram_total_gb: 32.0
+  ram_velocidade_mhz: 4800
+  ram_tipo: DDR5
+Datasets: mnist, fashion_mnist, cifar10, imdb, breast_cancer, speech_commands, jena_climate
+
+########## Fase 1: download e preparação dos datasets ##########
+
+--- Preparando mnist ---
+mnist: pronto.
+
+--- Preparando fashion_mnist ---
+fashion_mnist: pronto.
+
+--- Preparando cifar10 ---
+Baixando https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
+  Continuando de 129 MB
+  79% de 163 MB
+  80% de 163 MB
+  90% de 163 MB
+  100% de 163 MB
+cifar10: pronto.
+
+--- Preparando imdb ---
+imdb: pronto.
+
+--- Preparando breast_cancer ---
+breast_cancer: pronto.
+
+--- Preparando speech_commands ---
+Baixando http://download.tensorflow.org/data/speech_commands_v0.02.tar.gz
+  0% de 2316 MB
+  10% de 2316 MB
+  20% de 2316 MB
+  30% de 2316 MB
+  40% de 2316 MB
+  50% de 2316 MB
+  60% de 2316 MB
+  70% de 2316 MB
+  80% de 2316 MB
+  90% de 2316 MB
+  100% de 2316 MB
+Processando o Speech Commands (só na primeira vez; pode levar alguns minutos)...
+Cache salvo em: data\speech_commands\speech_commands_logmel.npz
+speech_commands: pronto.
+
+--- Preparando jena_climate ---
+jena_climate: pronto.
+
+Datasets prontos para treino: mnist, fashion_mnist, cifar10, imdb, breast_cancer, speech_commands, jena_climate
+
+########## Fase 2: treinos ##########
+
+########## Dataset: mnist ##########
+
+===== mnist: treino com 16 CPU(s), sem GPU =====
+CPUs (threads do PyTorch): 16
+Dispositivo: cpu
+Amostras de treino: 60000
+Amostras de teste: 10000
+Formato de uma amostra: (1, 28, 28)
+Batches por época (treino): 938
+SimpleCNN(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (adaptive_pool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (fc1): Linear(in_features=3136, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+Número total de parâmetros: 421,642
+Época [1/10] | Train Loss: 0.1352 | Train Acc: 95.8233% | Test Loss: 0.0481 | Test Acc: 98.4600%
+Época [2/10] | Train Loss: 0.0406 | Train Acc: 98.7500% | Test Loss: 0.0356 | Test Acc: 98.7100%
+Época [3/10] | Train Loss: 0.0293 | Train Acc: 99.0917% | Test Loss: 0.0311 | Test Acc: 98.9500%
+Época [4/10] | Train Loss: 0.0197 | Train Acc: 99.3467% | Test Loss: 0.0423 | Test Acc: 98.7700%
+Época [5/10] | Train Loss: 0.0141 | Train Acc: 99.5283% | Test Loss: 0.0282 | Test Acc: 99.1600%
+Época [6/10] | Train Loss: 0.0121 | Train Acc: 99.6033% | Test Loss: 0.0339 | Test Acc: 99.0600%
+Época [7/10] | Train Loss: 0.0097 | Train Acc: 99.6750% | Test Loss: 0.0317 | Test Acc: 99.1100%
+Época [8/10] | Train Loss: 0.0084 | Train Acc: 99.7150% | Test Loss: 0.0317 | Test Acc: 99.1800%
+Época [9/10] | Train Loss: 0.0069 | Train Acc: 99.7583% | Test Loss: 0.0341 | Test Acc: 99.1400%
+Época [10/10] | Train Loss: 0.0067 | Train Acc: 99.7733% | Test Loss: 0.0330 | Test Acc: 99.1900%
+
+Tempo total de execução: 93.70 segundos
+Resultados salvos em: results\mnist\cpus_16\single_worker_results.json
+Gráficos salvos em: results\mnist\cpus_16
+
+########## Dataset: fashion_mnist ##########
+C:\Users\Bunito\Desktop\Projeto Faculdade\data_sources.py:144: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:219.)
+  train_x = torch.from_numpy(train_x).float().div_(255.0)
+
+===== fashion_mnist: treino com 16 CPU(s), sem GPU =====
+CPUs (threads do PyTorch): 16
+Dispositivo: cpu
+Amostras de treino: 60000
+Amostras de teste: 10000
+Formato de uma amostra: (1, 28, 28)
+Batches por época (treino): 938
+SimpleCNN(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (adaptive_pool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (fc1): Linear(in_features=3136, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+Número total de parâmetros: 421,642
+Época [1/10] | Train Loss: 0.4194 | Train Acc: 84.7717% | Test Loss: 0.3483 | Test Acc: 87.4600%
+Época [2/10] | Train Loss: 0.2691 | Train Acc: 90.1533% | Test Loss: 0.2705 | Test Acc: 90.2900%
+Época [3/10] | Train Loss: 0.2224 | Train Acc: 91.8467% | Test Loss: 0.2493 | Test Acc: 91.2000%
+Época [4/10] | Train Loss: 0.1898 | Train Acc: 92.9817% | Test Loss: 0.2392 | Test Acc: 91.7600%
+Época [5/10] | Train Loss: 0.1637 | Train Acc: 93.9283% | Test Loss: 0.2413 | Test Acc: 91.6200%
+Época [6/10] | Train Loss: 0.1414 | Train Acc: 94.8000% | Test Loss: 0.2331 | Test Acc: 91.9600%
+Época [7/10] | Train Loss: 0.1199 | Train Acc: 95.5617% | Test Loss: 0.2501 | Test Acc: 92.1600%
+Época [8/10] | Train Loss: 0.1008 | Train Acc: 96.2367% | Test Loss: 0.2474 | Test Acc: 91.9200%
+Época [9/10] | Train Loss: 0.0861 | Train Acc: 96.8100% | Test Loss: 0.2569 | Test Acc: 92.6000%
+Época [10/10] | Train Loss: 0.0718 | Train Acc: 97.3050% | Test Loss: 0.2814 | Test Acc: 92.3300%
+
+Tempo total de execução: 80.39 segundos
+Resultados salvos em: results\fashion_mnist\cpus_16\single_worker_results.json
+Gráficos salvos em: results\fashion_mnist\cpus_16
+
+########## Dataset: cifar10 ##########
+
+===== cifar10: treino com 16 CPU(s), sem GPU =====
+CPUs (threads do PyTorch): 16
+Dispositivo: cpu
+Amostras de treino: 50000
+Amostras de teste: 10000
+Formato de uma amostra: (3, 32, 32)
+Batches por época (treino): 782
+SimpleCNN(
+  (conv1): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (adaptive_pool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (fc1): Linear(in_features=3136, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+Número total de parâmetros: 422,218
+Época [1/10] | Train Loss: 1.3488 | Train Acc: 51.4400% | Test Loss: 1.1023 | Test Acc: 61.4200%
+Época [2/10] | Train Loss: 0.9745 | Train Acc: 65.6160% | Test Loss: 0.9255 | Test Acc: 67.9600%
+Época [3/10] | Train Loss: 0.8342 | Train Acc: 70.8580% | Test Loss: 0.8481 | Test Acc: 70.6400%
+Época [4/10] | Train Loss: 0.7388 | Train Acc: 74.0680% | Test Loss: 0.8088 | Test Acc: 71.8700%
+Época [5/10] | Train Loss: 0.6680 | Train Acc: 76.7180% | Test Loss: 0.7686 | Test Acc: 73.5700%
+Época [6/10] | Train Loss: 0.6055 | Train Acc: 78.9160% | Test Loss: 0.7541 | Test Acc: 74.8600%
+Época [7/10] | Train Loss: 0.5474 | Train Acc: 80.6900% | Test Loss: 0.7464 | Test Acc: 75.1900%
+Época [8/10] | Train Loss: 0.4982 | Train Acc: 82.5100% | Test Loss: 0.7832 | Test Acc: 74.0500%
+Época [9/10] | Train Loss: 0.4522 | Train Acc: 84.2600% | Test Loss: 0.7664 | Test Acc: 75.0400%
+Época [10/10] | Train Loss: 0.4123 | Train Acc: 85.3860% | Test Loss: 0.8053 | Test Acc: 75.0800%
+
+Tempo total de execução: 83.21 segundos
+Resultados salvos em: results\cifar10\cpus_16\single_worker_results.json
+Gráficos salvos em: results\cifar10\cpus_16
+
+########## Dataset: imdb ##########
+
+===== imdb: treino com 16 CPU(s), sem GPU =====
+CPUs (threads do PyTorch): 16
+Dispositivo: cpu
+Amostras de treino: 25000
+Amostras de teste: 25000
+Formato de uma amostra: (256,)
+Batches por época (treino): 391
+TextCNN(
+  (embedding): Embedding(10000, 64, padding_idx=0)
+  (conv): Conv1d(64, 128, kernel_size=(5,), stride=(1,), padding=(2,))
+  (dropout): Dropout(p=0.3, inplace=False)
+  (fc): Linear(in_features=128, out_features=2, bias=True)
+)
+Número total de parâmetros: 681,346
+Época [1/10] | Train Loss: 0.6397 | Train Acc: 63.0000% | Test Loss: 0.4837 | Test Acc: 77.3560%
+Época [2/10] | Train Loss: 0.4832 | Train Acc: 76.2520% | Test Loss: 0.4078 | Test Acc: 81.6400%
+Época [3/10] | Train Loss: 0.4089 | Train Acc: 80.8920% | Test Loss: 0.3760 | Test Acc: 82.8160%
+Época [4/10] | Train Loss: 0.3550 | Train Acc: 84.3320% | Test Loss: 0.3447 | Test Acc: 84.7640%
+Época [5/10] | Train Loss: 0.3057 | Train Acc: 86.7720% | Test Loss: 0.3369 | Test Acc: 85.1960%
+Época [6/10] | Train Loss: 0.2629 | Train Acc: 88.8320% | Test Loss: 0.3240 | Test Acc: 86.0280%
+Época [7/10] | Train Loss: 0.2257 | Train Acc: 90.8160% | Test Loss: 0.3315 | Test Acc: 85.9920%
+Época [8/10] | Train Loss: 0.1909 | Train Acc: 92.2880% | Test Loss: 0.3354 | Test Acc: 86.3160%
+Época [9/10] | Train Loss: 0.1562 | Train Acc: 93.9160% | Test Loss: 0.3497 | Test Acc: 86.1680%
+Época [10/10] | Train Loss: 0.1327 | Train Acc: 95.0720% | Test Loss: 0.3779 | Test Acc: 85.9160%
+
+Tempo total de execução: 56.56 segundos
+Resultados salvos em: results\imdb\cpus_16\single_worker_results.json
+Gráficos salvos em: results\imdb\cpus_16
+
+########## Dataset: breast_cancer ##########
+
+===== breast_cancer: treino com 16 CPU(s), sem GPU =====
+CPUs (threads do PyTorch): 16
+Dispositivo: cpu
+Amostras de treino: 456
+Amostras de teste: 113
+Formato de uma amostra: (30,)
+Batches por época (treino): 8
+TabularMLP(
+  (layers): Sequential(
+    (0): Linear(in_features=30, out_features=64, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=64, out_features=64, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=64, out_features=2, bias=True)
+  )
+)
+Número total de parâmetros: 6,274
+Época [1/10] | Train Loss: 0.6543 | Train Acc: 74.5614% | Test Loss: 0.5954 | Test Acc: 87.6106%
+Época [2/10] | Train Loss: 0.5387 | Train Acc: 93.8596% | Test Loss: 0.4966 | Test Acc: 89.3805%
+Época [3/10] | Train Loss: 0.4247 | Train Acc: 95.1754% | Test Loss: 0.3896 | Test Acc: 90.2655%
+Época [4/10] | Train Loss: 0.3080 | Train Acc: 95.1754% | Test Loss: 0.2893 | Test Acc: 92.0354%
+Época [5/10] | Train Loss: 0.2081 | Train Acc: 95.8333% | Test Loss: 0.2191 | Test Acc: 92.0354%
+Época [6/10] | Train Loss: 0.1438 | Train Acc: 96.7105% | Test Loss: 0.1813 | Test Acc: 92.9204%
+Época [7/10] | Train Loss: 0.1085 | Train Acc: 96.7105% | Test Loss: 0.1536 | Test Acc: 94.6903%
+Época [8/10] | Train Loss: 0.0885 | Train Acc: 97.5877% | Test Loss: 0.1351 | Test Acc: 94.6903%
+Época [9/10] | Train Loss: 0.0761 | Train Acc: 98.2456% | Test Loss: 0.1166 | Test Acc: 96.4602%
+Época [10/10] | Train Loss: 0.0673 | Train Acc: 98.4649% | Test Loss: 0.1027 | Test Acc: 97.3451%
+
+Tempo total de execução: 0.08 segundos
+Resultados salvos em: results\breast_cancer\cpus_16\single_worker_results.json
+Gráficos salvos em: results\breast_cancer\cpus_16
+
+########## Dataset: speech_commands ##########
+
+===== speech_commands: treino com 16 CPU(s), sem GPU =====
+CPUs (threads do PyTorch): 16
+Dispositivo: cpu
+Amostras de treino: 34472
+Amostras de teste: 4074
+Formato de uma amostra: (1, 40, 51)
+Batches por época (treino): 539
+SimpleCNN(
+  (conv1): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (adaptive_pool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (fc1): Linear(in_features=3136, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+Número total de parâmetros: 421,642
+Época [1/10] | Train Loss: 1.1753 | Train Acc: 58.8652% | Test Loss: 0.6844 | Test Acc: 75.8223%
+Época [2/10] | Train Loss: 0.5425 | Train Acc: 81.2398% | Test Loss: 0.5009 | Test Acc: 81.8851%
+Época [3/10] | Train Loss: 0.4191 | Train Acc: 85.5361% | Test Loss: 0.4263 | Test Acc: 84.6343%
+Época [4/10] | Train Loss: 0.3511 | Train Acc: 87.8597% | Test Loss: 0.3860 | Test Acc: 86.7452%
+Época [5/10] | Train Loss: 0.3046 | Train Acc: 89.4668% | Test Loss: 0.3371 | Test Acc: 88.5616%
+Época [6/10] | Train Loss: 0.2671 | Train Acc: 90.7432% | Test Loss: 0.3019 | Test Acc: 89.5434%
+Época [7/10] | Train Loss: 0.2385 | Train Acc: 91.8223% | Test Loss: 0.3115 | Test Acc: 89.7153%
+Época [8/10] | Train Loss: 0.2161 | Train Acc: 92.4547% | Test Loss: 0.2835 | Test Acc: 90.5744%
+Época [9/10] | Train Loss: 0.1905 | Train Acc: 93.4991% | Test Loss: 0.2861 | Test Acc: 90.5989%
+Época [10/10] | Train Loss: 0.1785 | Train Acc: 93.8907% | Test Loss: 0.2746 | Test Acc: 91.0407%
+
+Tempo total de execução: 103.23 segundos
+Resultados salvos em: results\speech_commands\cpus_16\single_worker_results.json
+Gráficos salvos em: results\speech_commands\cpus_16
+
+########## Dataset: jena_climate ##########
+
+===== jena_climate: treino com 16 CPU(s), sem GPU =====
+CPUs (threads do PyTorch): 16
+Dispositivo: cpu
+Amostras de treino: 48921
+Amostras de teste: 20885
+Formato de uma amostra: (120, 14)
+Batches por época (treino): 765
+SequenceLSTM(
+  (lstm): LSTM(14, 32, batch_first=True)
+  (fc): Linear(in_features=32, out_features=1, bias=True)
+)
+Número total de parâmetros: 6,177
+Época [1/10] | Train Loss: 40.4689 | Train MAE: 4.5768 | Test Loss: 14.5945 | Test MAE: 2.8588
+Época [2/10] | Train Loss: 11.9471 | Train MAE: 2.6520 | Test Loss: 10.9815 | Test MAE: 2.5637
+Época [3/10] | Train Loss: 10.1643 | Train MAE: 2.4697 | Test Loss: 10.5697 | Test MAE: 2.5429
+Época [4/10] | Train Loss: 9.5049 | Train MAE: 2.3903 | Test Loss: 9.7562 | Test MAE: 2.4414
+Época [5/10] | Train Loss: 9.0200 | Train MAE: 2.3293 | Test Loss: 9.7010 | Test MAE: 2.4466
+Época [6/10] | Train Loss: 8.6916 | Train MAE: 2.2867 | Test Loss: 9.5291 | Test MAE: 2.4193
+Época [7/10] | Train Loss: 8.3984 | Train MAE: 2.2551 | Test Loss: 9.3358 | Test MAE: 2.3924
+Época [8/10] | Train Loss: 8.3021 | Train MAE: 2.2414 | Test Loss: 9.4892 | Test MAE: 2.4139
+Época [9/10] | Train Loss: 8.0026 | Train MAE: 2.2057 | Test Loss: 11.5009 | Test MAE: 2.5207
+Época [10/10] | Train Loss: 7.9910 | Train MAE: 2.2000 | Test Loss: 9.6484 | Test MAE: 2.4392
+
+Tempo total de execução: 144.00 segundos
+Resultados salvos em: results\jena_climate\cpus_16\single_worker_results.json
+Gráficos salvos em: results\jena_climate\cpus_16
+
+Resumo:
+  mnist              16 CPU(s) sem GPU: 93.70s | acurácia de teste 99.19%
+  fashion_mnist      16 CPU(s) sem GPU: 80.39s | acurácia de teste 92.33%
+  cifar10            16 CPU(s) sem GPU: 83.21s | acurácia de teste 75.08%
+  imdb               16 CPU(s) sem GPU: 56.56s | acurácia de teste 85.92%
+  breast_cancer      16 CPU(s) sem GPU: 0.08s | acurácia de teste 97.35%
+  speech_commands    16 CPU(s) sem GPU: 103.23s | acurácia de teste 91.04%
+  jena_climate       16 CPU(s) sem GPU: 144.00s | MAE de teste 2.4392
+Tabela de resultados salva em: results\all_results.csv
+Resumo (JSON) salvo em: results\all_results.json
+EXIT 0

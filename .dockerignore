@@ -1,0 +1,13 @@
+.git
+.venv
+__pycache__
+*.py[cod]
+mnist_*.csv
+results
+results_docker
+.vscode
+# Os datasets entram na imagem (pasta data/), mas sem arquivos desnecessários:
+# - downloads incompletos;
+# - o arquivo original do Speech Commands (2,4 GB); basta o cache processado.
+data/**/*.part
+data/speech_commands/*.tar.gz
